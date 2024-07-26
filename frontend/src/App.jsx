@@ -6,7 +6,9 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>react Quiz Master</h1>
+      <h1 className="text-5xl text-red-700 text-center mt-8">
+        react Quiz Master
+      </h1>
     </>
   );
 }
