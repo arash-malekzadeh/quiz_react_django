@@ -12,10 +12,13 @@ class Quiz(models.Model):
 
     def question_count(self):
         return self.questions.count()
+    def __str__(self):
+        return self.title
     class Meta:
-        verbose_name=_("quiz")
-        verbose_name_plural=_("quizzes")
+        verbose_name=_("Quiz")
+        verbose_name_plural=_("Quizzes")
         ordering=['id']
+    
 class Question(models.Model):
     quiz=models.ForeignKey(Quiz,related_name="questions",on_delete=models.CASCADE,verbose_name="کوئیز")
     title=models.CharField(max_length=255,default='',verbose_name="متن سؤال")
@@ -41,6 +44,6 @@ class Answer(models.Model):
         verbose_name_plural=_("answers")
         ordering=['id']
     def __str__(self):
-        return self.title
+        return self.answer_text
 
 
